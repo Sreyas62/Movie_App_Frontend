@@ -105,7 +105,7 @@ function SignupPage() {
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
-                Already a user? <Link color={'blue.400'} href='/login'>Login</Link>
+                Already a user? <Button backgroundColor={"white"} color={'blue.400'} onClick={()=>{nav("/login")}}>Login</Button>
               </Text>
             </Stack>
           </Stack>
