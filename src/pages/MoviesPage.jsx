@@ -47,13 +47,13 @@ function MoviesPage() {
   return (
     <Box padding={8}>
 
-        <Grid w={'100%'} gridTemplateColumns='repeat(4,1fr)'>
+        <Grid w={'100%'} gridTemplateColumns={{base:"none",md:'repeat(4,1fr)'}}>
             {movies?.map((el)=> <MovieCard key={el._id} {...el} />)}
         </Grid>
 
     
     <>
-    <IconButton position={"fixed"} w={'5%'} h={'10%'} bottom={0} right={0} margin={16} rounded={100}
+    <IconButton position={"fixed"} w={{base:"16",md:'5%'}} h={{base:"16",md:'10%'}} bottom={0} right={0} margin={16} rounded={100}
     onClick={() => {
         onOpen()
     }} icon={<BsPlusLg/>}
