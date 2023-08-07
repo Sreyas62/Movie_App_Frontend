@@ -53,7 +53,7 @@ function MoviesPage() {
 
     
     <>
-    <IconButton position={"fixed"} w={{base:"16",md:'5%'}} h={{base:"16",md:'10%'}} bottom={0} right={0} margin={16} rounded={100}
+    <IconButton position={"fixed"} w={{base:"16",md:'5%'}} h={{base:"16",md:'10%'}} bottom={0} right={0} margin={{base:4,md:16}} rounded={100}
     onClick={() => {
         onOpen()
     }} icon={<BsPlusLg/>}
