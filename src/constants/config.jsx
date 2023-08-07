@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://odd-teal-haddock-wear.cyclic.app'
