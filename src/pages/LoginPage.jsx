@@ -13,7 +13,7 @@ import {
     InputRightElement,
     InputGroup,
   } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from '../Redux/users/user.actions'
 import { useNavigate } from 'react-router-dom'
@@ -34,6 +34,16 @@ function LoginPage() {
         dispatch(getUser({email, password}))
         nav("/movies")
     }
+    useEffect(() => {
+      setEmail('');
+      setPassword(''); 
+      setShowPassword(false); 
+    }, [auth]);
+    useEffect(() => {
+      if (auth) {
+        nav('/movies');
+      }
+    }, [auth, nav]);
     if(loding) return <h1 style={{marginTop:"10em"}}>Loading...</h1>
     if(error) return <h1 style={{marginTop:"10em"}}>Error...</h1>
 
