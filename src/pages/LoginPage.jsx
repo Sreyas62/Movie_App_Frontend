@@ -30,13 +30,23 @@ function LoginPage() {
     const [showPassword, setShowPassword] = useState(false)
     const dispatch = useDispatch()
 
-    const handleLogin = () => {
+    const handleLogin = async() => {
         dispatch(getUser({email, password}))
-        nav("/movies")
+        await new Promise((resolve) => setTimeout(resolve, 500)); // Adjust delay if needed
+        localStorage.setItem('token', token); // Store the token in local storage
+        console.log(token)
+    nav('/movies');
     }
     if(loding) return <h1 style={{marginTop:"10em"}}>Loading...</h1>
     if(error) return <h1 style={{marginTop:"10em"}}>Error...</h1>
-
+    useEffect(() => {
+      const storedToken = localStorage.getItem('token');
+      if (storedToken) {
+          // Update the token in the Redux store
+          dispatch({ type: LOGIN_USER_SUCCESS, payload: storedToken });
+          nav('/movies');
+      }
+  }, [auth, nav]);
 
   return (
     <Stack minH={'80vh'} direction={{ base: 'column-reverse', md: 'row' }}>
