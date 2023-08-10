@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -17,13 +17,5 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// Configure the store using configureStore
-export const store = configureStore({
-  reducer: persistedReducer,
-  middleware: [thunk]
-});
-
-// Persistor remains the same   
+export const store = createStore(persistedReducer, applyMiddleware(thunk));
 export const persistor = persistStore(store);
-
-
