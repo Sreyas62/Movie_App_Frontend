@@ -3,6 +3,7 @@ import { CREATE_MOVIES_ERROR, CREATE_MOVIES_LOADING, CREATE_MOVIES_SUCCESS, DELE
 import { BASE_URL } from "../../constants/config"
 import axios from "axios"
 import { store } from "../store"
+import { LOGOUT } from "../users/user.types"
 
 
 
@@ -24,6 +25,9 @@ export const getMovies = () => async (dispatch) => {
         console.log(message)
         if (status === 1) {
             dispatch({ type: GET_MOVIES_SUCCESS, payload: data })
+        }
+        else if(status ===2){
+            dispatch({ type: LOGOUT })
         }
         else {
             dispatch({ type: GET_MOVIES_ERROR })
