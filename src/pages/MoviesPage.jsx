@@ -38,7 +38,6 @@ function MoviesPage() {
 
     useEffect(() => {
         dispatch(getMovies())
-        localStorage.setItem('token', token);
     }, [])
 
     useEffect(() => {

@@ -13,11 +13,10 @@ import {
     InputRightElement,
     InputGroup,
   } from '@chakra-ui/react'
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from '../Redux/users/user.actions'
 import { useNavigate } from 'react-router-dom'
-import { LOGIN_USER_SUCCESS } from '../Redux/users/user.types'
 
 function LoginPage() {
     const nav = useNavigate()
@@ -31,23 +30,13 @@ function LoginPage() {
     const [showPassword, setShowPassword] = useState(false)
     const dispatch = useDispatch()
 
-    const handleLogin = async() => {
+    const handleLogin = () => {
         dispatch(getUser({email, password}))
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        const storedToken = token; // Get the token from Redux store
-        localStorage.setItem('token', storedToken); // Store the token in Local Storage
-        nav('/movies');
+        nav("/movies")
     }
     if(loding) return <h1 style={{marginTop:"10em"}}>Loading...</h1>
     if(error) return <h1 style={{marginTop:"10em"}}>Error...</h1>
-  //   useEffect(() => {
-  //     const storedToken = localStorage.getItem('token');
-  //     if (storedToken) {
-  //         // Update the token in the Redux store
-  //         dispatch({ type: LOGIN_USER_SUCCESS, payload: storedToken });
-  //         nav('/movies');
-  //     }
-  // }, [auth, nav]);
+
 
   return (
     <Stack minH={'80vh'} direction={{ base: 'column-reverse', md: 'row' }}>

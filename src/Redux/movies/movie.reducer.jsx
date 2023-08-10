@@ -1,10 +1,9 @@
 import { CREATE_MOVIES_ERROR, CREATE_MOVIES_LOADING, CREATE_MOVIES_SUCCESS, DELETE_MOVIES_ERROR, DELETE_MOVIES_LOADING, DELETE_MOVIES_SUCCESS, GET_MOVIES_ERROR, GET_MOVIES_LOADING, GET_MOVIES_SUCCESS, UPDATE_MOVIES_ERROR, UPDATE_MOVIES_LOADING, UPDATE_MOVIES_SUCCESS } from "./movie.types"
-const storedToken = localStorage.getItem('token');
+
 let initialState = {
     loading: false,
     error: false,
-    data: [],
-    token: storedToken || '',
+    data: []
 }
 
 export const movieReducer = (state = initialState, action) => {
