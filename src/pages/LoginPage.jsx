@@ -32,9 +32,9 @@ function LoginPage() {
 
     const handleLogin = () => {
         dispatch(getUser({email, password}))
-        nav("/")
-    }
 
+    }
+    
 
   return (
     <Stack minH={'80vh'} direction={{ base: 'column-reverse', md: 'row' }}>
