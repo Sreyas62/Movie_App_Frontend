@@ -17,5 +17,8 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = createStore(persistedReducer, applyMiddleware(thunk));
+// Apply any enhancers you might need (like Redux DevTools)
+const enhancer = applyMiddleware(thunk);
+
+export const store = createStore(persistedReducer, enhancer);
 export const persistor = persistStore(store);

@@ -1,8 +1,10 @@
 import { LOGIN_USER_ERROR, LOGIN_USER_LOADING, LOGIN_USER_SUCCESS, LOGOUT } from "./user.types"
 
 const initialState = {
-    token: "",
-    auth: false
+    token: null,
+    auth: false,
+    loading: false,
+    error: false
 }
 
 
