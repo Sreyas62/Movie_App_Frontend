@@ -6,7 +6,6 @@ import AllRoutes from './routes/AllRoutes'
 import Navbar from './components/Homepage/Navbar/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

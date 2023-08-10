@@ -4,6 +4,7 @@ import { Heading } from '@chakra-ui/react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 function Homepage() {
     const nav = useNavigate()
+    
   return (
     <>
     <Box>
