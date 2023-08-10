@@ -32,7 +32,7 @@ function LoginPage() {
 
     const handleLogin = () => {
         dispatch(getUser({email, password}))
-        nav("/movies")
+        nav("/")
     }
     if(loding) return <h1 style={{marginTop:"10em"}}>Loading...</h1>
     if(error) return <h1 style={{marginTop:"10em"}}>Error...</h1>
