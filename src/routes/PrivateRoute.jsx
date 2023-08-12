@@ -6,7 +6,7 @@ export default function PrivateRoute({ children}) {
     const {auth} = useSelector((state)=>state.userReducer)
 
     if (auth) {
-        return <MoviesPage/>
+        return children
     }
 
     return <LoginPage/>
