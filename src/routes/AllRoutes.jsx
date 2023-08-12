@@ -11,5 +11,6 @@ export default function AllRoutes() {
         <Route path="/register" element={<SignupPage/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/movies" element={<PrivateRoute><MoviesPage/></PrivateRoute>}></Route>
+        <Route path="*" element={<Navigate to="/" />} />
     </Routes>
 }
