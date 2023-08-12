@@ -15,6 +15,6 @@ export default function PrivateRoute({ children}) {
         return <SignupPage/>
     }
 
-    return <Navigate to="/login"/>
+    return Navigate("/login")
 
 }
